@@ -1,21 +1,14 @@
-#  ASP.NET Core Teacher Management System
+##  Add & Delete Teachers (Part 2)
 
-This project is a **C# ASP.NET Core MVC + Web API** application for managing teachers in a school database. It implements a complete **CRUD system** (Create, Read, Update, Delete) using **MySQL via XAMPP** and **ADO.NET** (without Entity Framework).
+### Web Pages:
+- `/TeacherPage/New` – Add new teacher form
+- `/TeacherPage/DeleteConfirm/{id}` – Delete confirmation
 
-Created for **Christine Bittle's Cumulative Project (Parts 1–3)**.
+### API:
+- `POST /api/TeacherAPI` – Add teacher via JSON
+- `DELETE /api/TeacherAPI/{id}` – Delete teacher by ID
 
----
-
-##  Technologies Used
-
-- ASP.NET Core MVC (.NET 6+)
-- MySQL (via XAMPP)
-- ADO.NET with `MySql.Data`
-- Bootstrap 5 (CDN)
-- Visual Studio 2022 / VS Code
-- Git + GitHub
-
----
-
-## Folder Structure
-
+Example cURL:
+```bash
+curl -X POST https://localhost:xxxx/api/TeacherAPI -H "Content-Type: application/json" -d "{\"FirstName\":\"Sara\",\"LastName\":\"Lee\",\"HireDate\":\"2021-01-01\"}"
+curl -X DELETE https://localhost:xxxx/api/TeacherAPI/3
