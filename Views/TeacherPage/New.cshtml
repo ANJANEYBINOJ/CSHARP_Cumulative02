@@ -1,0 +1,26 @@
+@model Cumulative01.Models.Teacher
+@{
+    ViewData["Title"] = "Add New Teacher";
+    Layout = "~/Views/Shared1/_Layout.cshtml";
+}
+
+<h2>Add New Teacher</h2>
+
+<form method="post" action="/TeacherPage/Create">
+    <div class="mb-3">
+        <label class="form-label">First Name</label>
+        <input class="form-control" type="text" name="FirstName" required />
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Last Name</label>
+        <input class="form-control" type="text" name="LastName" required />
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Hire Date</label>
+        <input class="form-control" type="date" name="HireDate" required />
+    </div>
+
+    <button type="submit" class="btn btn-success">Add Teacher</button>
+</form>

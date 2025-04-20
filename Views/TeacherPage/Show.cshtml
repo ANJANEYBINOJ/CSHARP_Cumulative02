@@ -1,0 +1,15 @@
+﻿@model Cumulative01.Models.Teacher
+@{
+    ViewData["Title"] = "Teacher Details";
+    Layout = "~/Views/Shared1/_Layout.cshtml";
+}
+
+<h2 class="mb-3">Teacher Details</h2>
+
+<div class="card">
+    <div class="card-body">
+        <h4 class="card-title">@Model.FirstName @Model.LastName</h4>
+        <p class="card-text"><strong>Hire Date:</strong> @Model.HireDate.ToShortDateString()</p>
+        <a href="/TeacherPage/List" class="btn btn-secondary mt-3">Back to List</a>
+    </div>
+</div>

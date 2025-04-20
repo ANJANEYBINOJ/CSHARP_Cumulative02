@@ -1,0 +1,32 @@
+﻿@model List<Cumulative01.Models.Teacher>
+@{
+    ViewData["Title"] = "Teacher List";
+    Layout = "~/Views/Shared1/_Layout.cshtml";
+}
+
+<h2 class="mb-3">All Teachers</h2>
+
+<table class="table table-bordered table-striped">
+    <thead class="table-dark">
+        <tr>
+            <th>Name</th>
+            <th>Hire Date</th>
+            <th>View</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var teacher in Model)
+        {
+            <tr>
+                <td>@teacher.FirstName @teacher.LastName</td>
+                <td>@teacher.HireDate.ToShortDateString()</td>
+                <td>
+                    <a href="/TeacherPage/Show/@teacher.Id" class="btn btn-sm btn-primary">Details</a>
+                    <a href="/TeacherPage/New" class="btn btn-success">➕ Add New Teacher</a>
+                    <a href="/TeacherPage/DeleteConfirm/@teacher.Id" class="btn btn-danger btn-sm">🗑️ Delete</a>
+                    <a href="/TeacherPage/Edit/@teacher.Id" class="btn btn-warning btn-sm">Edit</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
